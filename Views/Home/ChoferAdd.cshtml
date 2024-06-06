@@ -1,0 +1,20 @@
+@{
+     ViewData["Title"] = "Alta de Chofers";
+}
+
+<form asp-controller = "Home" asp-action = "ChoferSave">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Escriba la Carrera">
+
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="fecha" name="Fecha" placeholder="Escribir fecha de Ingreso">
+
+        <label for="salario" class="form-label">Salario</label>
+        <input type="texto" class="form-control" id="salario" name="Salario" placeholder="Ingresar salario">
+
+    </div>
+    <button type="submit" class="btn btn-primary"> Guardar</button>
+    <a asp-controller="Home" asp-action="Privacy" class ="btn btn-secundary mb-3">Regresar</a>
+    <button type="submit" class="btn btn-secundary"> Cancelar</button>
+</form>

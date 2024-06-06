@@ -1,0 +1,40 @@
+﻿@model List<ChoferesModel>
+
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h1>Lista de Choferes</h1>
+
+<a asp-controller="Home" asp-action="ChoferAdd" class ="btn btn-primary mb-3">Agregar Carrera</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Salario</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var chofer in Model)
+        {
+            <tr>
+                <td>@chofer.Nombre</td>
+                <td>@chofer.Fecha</td>
+                <td>@chofer.Salario</td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="ChoferEdit" asp-controller="Chofer" asp-router-id="@chofer.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="ChoferDeleted" asp-controller="Chofer" asp-router-id="@chofer.Id">Borrar</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+
+</table>
+
+
